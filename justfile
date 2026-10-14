@@ -8,9 +8,9 @@ build:
 # ship: build
 #     cp out/gg ~/bin/gg
 
-# linux-build:
-#     bun build src/index.ts --target=bun --outfile ~/Desktop/gg-linux-x64-modern --compile --minify --sourcemap --bytecode --target=bun-linux-x64-modern
-#     bun build src/index.ts --target=bun --outfile ~/Desktop/gg-linux-arm64 --compile --minify --sourcemap --bytecode --target=bun-linux-arm64
+linux-build:
+    bun build src/index.ts --target=bun --outfile ./out/describetime-linux-x64-modern --compile --minify --sourcemap --bytecode --target=bun-linux-x64-modern
+    bun build src/index.ts --target=bun --outfile ./out/describetime-linux-arm64 --compile --minify --sourcemap --bytecode --target=bun-linux-arm64
 
 # linux-dev:
 #     bun build --watch src/index.ts --target=bun --outfile ~/Desktop/gg-linux-arm64 --compile --minify --sourcemap --bytecode --target=bun-linux-arm64

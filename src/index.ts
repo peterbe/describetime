@@ -1,6 +1,7 @@
 import { confirm, input } from "@inquirer/prompts";
 import { Command } from "commander";
 import { formatRFC3339, formatRFC7231, intlFormatDistance } from "date-fns/fp";
+import { formatInTimezone, MISC_TIMEZONES } from "./timezones";
 import { bold, getTimeZoneName, grey, parseAnyDate } from "./utils";
 
 const program = new Command();
@@ -45,21 +46,6 @@ program
 			process.exit(1);
 		}
 
-		// if (asDate === null) {
-		//   console.error("That's not a valid date");
-		//   if (interactive) {
-
-		//     if (well) {
-		//       asString = await interactiveInput("Enter a date time value:");
-		//     } else {
-		//     process.exit(0);
-		//     }
-		//   } else {
-
-		//     process.exit(1);
-		//   }
-		// }
-
 		// console.log("AS SRING", asString)
 		// console.log("AS DATE", asDate)
 		const fmtLong = new Intl.DateTimeFormat(undefined, {
@@ -97,6 +83,13 @@ program
 		console.log(grey("IN ISO FORMAT     "), bold(asDate.toISOString()));
 		console.log(grey("IN RFC3339 FORMAT "), bold(formatRFC3339(asDate)));
 		console.log(grey("IN RFC7231 FORMAT "), bold(formatRFC7231(asDate)));
+		console.log(grey("\nIn different time zones"));
+		for (const tz of MISC_TIMEZONES) {
+			console.log(
+				grey(`${tz.label}`.padEnd(18)),
+				bold(formatInTimezone(asDate, tz.ianaZone)),
+			);
+		}
 	});
 
 program.parse();
