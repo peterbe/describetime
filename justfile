@@ -5,8 +5,7 @@ dev:
 build:
     bun run build
 
-# ship: build
-#     cp out/gg ~/bin/gg
+ship: build linux-build
 
 linux-build:
     bun build src/index.ts --target=bun --outfile ./out/describetime-linux-x64-modern --compile --minify --sourcemap --bytecode --target=bun-linux-x64-modern
