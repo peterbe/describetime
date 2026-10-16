@@ -1,11 +1,13 @@
 {
 	"name": "describetime",
-	"module": "index.ts",
 	"type": "module",
 	"bin": {
 		"describetime": "src/index.ts"
 	},
-	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/peterbe/describetime"
+	},
 	"version": "0.0.2",
 	"devDependencies": {
 		"@biomejs/biome": "2.5.15",
@@ -31,5 +33,8 @@
 		"build:linux-x64": "bun build src/index.ts --target=bun-linux-x64 --outfile out/describetime-linux-x64 --compile --bytecode",
 		"release": "np --yolo",
 		"postinstall": "bunx biome migrate --write"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
