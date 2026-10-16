@@ -2,6 +2,7 @@ import { confirm, input } from "@inquirer/prompts";
 import { Command } from "commander";
 import { formatRFC3339, formatRFC7231, intlFormatDistance } from "date-fns/fp";
 import { version } from "../package.json";
+import { describeDateDifference } from "./date-difference-exact";
 import { formatInTimezone, MISC_TIMEZONES } from "./timezones";
 import { bold, getTimeZoneName, grey, parseAnyDate } from "./utils";
 
@@ -81,6 +82,8 @@ program
 		console.log(
 			grey("DISTANCE          "),
 			bold(intlFormatDistance(new Date(), asDate)),
+			"  ",
+			grey(describeDateDifference(asDate).text),
 		);
 		console.log(grey("IN ISO FORMAT     "), bold(asDate.toISOString()));
 		console.log(grey("IN RFC3339 FORMAT "), bold(formatRFC3339(asDate)));
