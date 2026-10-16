@@ -1,5 +1,7 @@
 {
 	"name": "describetime",
+	"version": "0.0.4",
+	"description": "A CLI tool for describing a datetime in different formats and timezones",
 	"type": "module",
 	"bin": {
 		"describetime": "src/index.ts"
@@ -8,7 +10,6 @@
 		"type": "git",
 		"url": "git://github.com/peterbe/describetime"
 	},
-	"version": "0.0.4",
 	"devDependencies": {
 		"@biomejs/biome": "2.5.15",
 		"@types/bun": "latest",
@@ -36,5 +37,15 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"keywords": [
+		"cli",
+		"timezones",
+		"datetime"
+	],
+	"license": "MIT",
+	"author": "Peter Bengtsson",
+	"bugs": {
+		"url": "https://github.com/peterbe/describetime/issues"
 	}
 }
