@@ -21,6 +21,7 @@
 	},
 	"scripts": {
 		"format": "biome check --write --unsafe",
+		"lint:check": "biome check",
 		"prepare": "husky",
 		"build": "bun build src/index.ts --target=bun --outfile out/describetime --compile --bytecode",
 		"build:watch": "bun build --watch src/index.ts --target=bun --outfile out/describetime --compile --bytecode",
