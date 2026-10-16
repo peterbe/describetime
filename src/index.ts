@@ -1,6 +1,7 @@
 import { confirm, input } from "@inquirer/prompts";
 import { Command } from "commander";
 import { formatRFC3339, formatRFC7231, intlFormatDistance } from "date-fns/fp";
+import { version } from "../package.json";
 import { formatInTimezone, MISC_TIMEZONES } from "./timezones";
 import { bold, getTimeZoneName, grey, parseAnyDate } from "./utils";
 
@@ -9,6 +10,7 @@ const program = new Command();
 program
 	.name("describetime")
 	.description("Describe a datetime in different ways")
+	.version(version)
 	.argument("[values...]", "one or more values")
 	.action(async (values: string[]) => {
 		let asString: string = "";
