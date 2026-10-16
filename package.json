@@ -8,7 +8,7 @@
 		"type": "git",
 		"url": "git://github.com/peterbe/describetime"
 	},
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"devDependencies": {
 		"@biomejs/biome": "2.5.15",
 		"@types/bun": "latest",
