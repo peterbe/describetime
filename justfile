@@ -14,7 +14,10 @@ linux-build:
 # linux-dev:
 #     bun build --watch src/index.ts --target=bun --outfile ~/Desktop/gg-linux-arm64 --compile --minify --sourcemap --bytecode --target=bun-linux-arm64
 
-lint:
+check:
+    bun check
+    
+lint: check
     bun run format
 
 format: lint

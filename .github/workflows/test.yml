@@ -1,0 +1,37 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install
+      - run: bun run lint:check
+      - run: bun check
+      - run: bun run build
+      - run: bun run build:linux-x64
+      - name: Compile and install
+        run: |
+          set -e
+          mkdir -p /home/runner/.local/bin
+          mv out/describetime-linux-x64 /home/runner/.local/bin/describetime
+      - name: Add local bin to PATH
+        run: echo "/home/runner/.local/bin" >> $GITHUB_PATH
+      - name: Test installed version
+        run: |
+          set -e
+          which describetime
+          describetime --version
+          describetime help
+      - run: bun test
+
