@@ -32,7 +32,7 @@ test:
     bun test
 
 release:
-    bun run release
+    bun publish
 
 upgrade:
     bun update --interactive --minimum-release-age=86400 && bun install
