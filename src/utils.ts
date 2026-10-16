@@ -9,28 +9,6 @@ export function getTimeZoneName(
 		.find((part) => part.type === "timeZoneName")?.value;
 }
 
-// const FORMATS = [
-//   "yyyy-MM-dd HH:mm:ss",
-//   "yyyy-MM-dd HH:mm",
-//   "MM/dd/yyyy HH:mm",
-//   "MM/dd/yyyy",
-//   "dd.MM.yyyy",
-//   "MMM d, yyyy",
-//   "MMMM d, yyyy h:mm a",
-//   "d MMM yyyy",
-// ];
-
-// function parseAnyDate(input: string): Date | null {
-//   const iso = parseISO(input);
-//   if (isValid(iso)) return iso;
-
-//   for (const fmt of FORMATS) {
-//     const d = parse(input, fmt, new Date());
-//     if (isValid(d)) return d;
-//   }
-//   return null;
-// }
-
 // Abbreviations are ambiguous worldwide (e.g. "CST" is also China Standard Time),
 // so only include the ones your users actually send.
 const TZ_ABBREVIATIONS: Record<string, string> = {
@@ -66,6 +44,7 @@ const FORMATS = [
 	"MMMM d, yyyy 'at' h:mm:ss a",
 	"MMMM d, yyyy 'at' h:mm a",
 	"yyyy-MM-dd HH:mm:ss",
+	"EEE MMM d HH:mm:ss",
 	"yyyy-MM-dd HH:mm",
 	"MM/dd/yyyy HH:mm",
 	"MM/dd/yyyy",
