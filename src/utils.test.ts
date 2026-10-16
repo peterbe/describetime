@@ -2,8 +2,12 @@ import { describe, expect, test } from "bun:test";
 import { getTimeZoneName, parseAnyDate } from "./utils";
 
 describe("utils", () => {
-	test("parse any date", () => {
-		const date = parseAnyDate("October 11, 2026 at 11:23:00 AM CST");
+	test.each([
+		["October 11, 2026 at 11:23:00 AM CST"],
+		["2026-10-11 11:23:00 -06:00"],
+		["10/11/2026 11:23 AM CST"],
+	])("parse any date %s", (input) => {
+		const date = parseAnyDate(input);
 		expect(date).toBeDate();
 	});
 	test("get time zone name", () => {

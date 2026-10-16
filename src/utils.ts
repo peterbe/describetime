@@ -39,6 +39,7 @@ const FORMATS = [
 	"yyyy-MM-dd HH:mm:ss XXX",
 	"yyyy-MM-dd HH:mm:ss XX",
 	"MM/dd/yyyy HH:mm XXX",
+	"MM/dd/yyyy h:mm a XXX",
 
 	// Without timezone (interpreted as local time)
 	"MMMM d, yyyy 'at' h:mm:ss a",
