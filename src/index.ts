@@ -1,3 +1,5 @@
+#!/usr/bin/env bun
+
 import { confirm, input } from "@inquirer/prompts";
 import { Command } from "commander";
 import { formatRFC3339, formatRFC7231, intlFormatDistance } from "date-fns/fp";
