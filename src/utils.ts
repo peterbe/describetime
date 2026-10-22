@@ -40,6 +40,9 @@ const FORMATS = [
 	"yyyy-MM-dd HH:mm:ss XX",
 	"MM/dd/yyyy HH:mm XXX",
 	"MM/dd/yyyy h:mm a XXX",
+	// RFC 2822 / HTTP dates, e.g. "Thu, 22 Oct 2026 15:28:43 GMT"
+	"EEE, d MMM yyyy HH:mm:ss XXX",
+	"EEE, d MMM yyyy HH:mm:ss XX",
 
 	// Without timezone (interpreted as local time)
 	"MMMM d, yyyy 'at' h:mm:ss a",
