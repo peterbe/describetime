@@ -43,6 +43,8 @@ const FORMATS = [
 	// RFC 2822 / HTTP dates, e.g. "Thu, 22 Oct 2026 15:28:43 GMT"
 	"EEE, d MMM yyyy HH:mm:ss XXX",
 	"EEE, d MMM yyyy HH:mm:ss XX",
+	// git log style, e.g. "Sun Oct 25 17:05:22 2026 +0300"
+	"EEE MMM d HH:mm:ss yyyy XX",
 
 	// Without timezone (interpreted as local time)
 	"MMMM d, yyyy 'at' h:mm:ss a",
