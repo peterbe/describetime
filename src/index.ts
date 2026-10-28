@@ -3,6 +3,7 @@
 import { confirm, input } from "@inquirer/prompts";
 import { Command } from "commander";
 import { formatRFC3339, formatRFC7231, intlFormatDistance } from "date-fns/fp";
+
 import { version } from "../package.json";
 import { describeDateDifference } from "./date-difference-exact";
 import { formatInTimezone, MISC_TIMEZONES } from "./timezones";
@@ -92,10 +93,7 @@ program
 		console.log(grey("IN RFC7231 FORMAT "), bold(formatRFC7231(asDate)));
 		console.log(grey("\nIn different time zones"));
 		for (const tz of MISC_TIMEZONES) {
-			console.log(
-				grey(`${tz.label}`.padEnd(18)),
-				bold(formatInTimezone(asDate, tz.ianaZone)),
-			);
+			console.log(grey(`${tz.label}`.padEnd(18)), bold(formatInTimezone(asDate, tz.ianaZone)));
 		}
 	});
 
