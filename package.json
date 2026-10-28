@@ -1,49 +1,49 @@
 {
-  "name": "describetime",
-  "version": "0.0.7",
-  "description": "A CLI tool for describing a datetime in different formats and timezones",
-  "keywords": [
-    "cli",
-    "datetime",
-    "timezones"
-  ],
-  "bugs": {
-    "url": "https://github.com/peterbe/describetime/issues"
-  },
-  "license": "MIT",
-  "author": "Peter Bengtsson",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/peterbe/describetime"
-  },
-  "bin": {
-    "describetime": "src/index.ts"
-  },
-  "type": "module",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "format": "bun fmt",
-    "lint:check": "bun fmt --check",
-    "prepare": "husky",
-    "build": "bun build src/index.ts --target=bun --outfile out/describetime --compile --bytecode",
-    "build:watch": "bun build --watch src/index.ts --target=bun --outfile out/describetime --compile --bytecode",
-    "build:linux-arm64": "bun build src/index.ts --target=bun-linux-arm64 --outfile out/describetime-linux-arm64 --compile --bytecode",
-    "build:linux-x64": "bun build src/index.ts --target=bun-linux-x64 --outfile out/describetime-linux-x64 --compile --bytecode",
-    "release": "np --yolo"
-  },
-  "dependencies": {
-    "@inquirer/prompts": "^8.7.3",
-    "commander": "^15.0.0",
-    "date-fns": "^4.4.0"
-  },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "husky": "^9.1.7",
-    "np": "^12.1.1"
-  },
-  "peerDependencies": {
-    "typescript": "^7"
-  }
+	"name": "describetime",
+	"version": "0.0.7",
+	"description": "A CLI tool for describing a datetime in different formats and timezones",
+	"keywords": [
+		"cli",
+		"datetime",
+		"timezones"
+	],
+	"bugs": {
+		"url": "https://github.com/peterbe/describetime/issues"
+	},
+	"license": "MIT",
+	"author": "Peter Bengtsson",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/peterbe/describetime"
+	},
+	"bin": {
+		"describetime": "src/index.ts"
+	},
+	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"format": "bun fmt",
+		"lint:check": "bun fmt --check",
+		"prepare": "husky",
+		"build": "bun build src/index.ts --target=bun --outfile out/describetime --compile --bytecode",
+		"build:watch": "bun build --watch src/index.ts --target=bun --outfile out/describetime --compile --bytecode",
+		"build:linux-arm64": "bun build src/index.ts --target=bun-linux-arm64 --outfile out/describetime-linux-arm64 --compile --bytecode",
+		"build:linux-x64": "bun build src/index.ts --target=bun-linux-x64 --outfile out/describetime-linux-x64 --compile --bytecode",
+		"release": "np --yolo"
+	},
+	"dependencies": {
+		"@inquirer/prompts": "^8.7.3",
+		"commander": "^15.0.0",
+		"date-fns": "^4.4.0"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"husky": "^9.1.7",
+		"np": "^12.1.1"
+	},
+	"peerDependencies": {
+		"typescript": "^7"
+	}
 }
