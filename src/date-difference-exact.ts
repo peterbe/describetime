@@ -5,7 +5,7 @@ export interface DateDifference {
   hours: number;
   minutes: number;
   seconds: number;
-  /** true if `date` is after `reference` */
+  /** True if `date` is after `reference` */
   isFuture: boolean;
   /** Human-readable description, e.g. "2 years, 3 months and 4 days ago" */
   text: string;
@@ -46,12 +46,11 @@ function addMonthsUTC(date: Date, months: number): Date {
 }
 
 /**
- * Describes `date` relative to `reference` (defaults to now) in years, months,
- * days, hours, minutes and seconds.
+ * Describes `date` relative to `reference` (defaults to now) in years, months, days, hours, minutes
+ * and seconds.
  *
- * Years and months are calendar-aware (they respect varying month lengths and
- * leap years). Calculations use UTC, so daylight-saving shifts don't distort
- * the hour/minute/second values.
+ * Years and months are calendar-aware (they respect varying month lengths and leap years).
+ * Calculations use UTC, so daylight-saving shifts don't distort the hour/minute/second values.
  */
 export function describeDateDifference(
   date: Date,
