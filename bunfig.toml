@@ -4,4 +4,3 @@ printWidth = 100
 semi = true
 sortImports = true
 sortPackageJson = true
-jsdoc = true
