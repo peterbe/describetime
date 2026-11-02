@@ -68,6 +68,7 @@ function normalizeTimeZone(input: string): string {
 }
 
 export function parseAnyDate(input: string): Date | null {
+	if (input.trim().toLowerCase() === "now") return new Date();
 	const iso = parseISO(input);
 	if (isValid(iso)) return iso;
 
